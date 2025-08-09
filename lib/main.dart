@@ -16,11 +16,7 @@ void main() {
   ); // MaterialApp
 }
 
-class Home extends StatelessWidget {
-  const Home({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Text("Hello Flutter! Step 2");
-  } // build
-} // Home
+
+// This is a basic Flutter widget test.
+// // To perform an interaction with a widget in your test, use the WidgetTester 
