@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn_flutter_67_1/screen/home.dart';
 
 void main() {
   runApp(
@@ -7,7 +8,7 @@ void main() {
       home: Scaffold(
         appBar: AppBar(
           title: Text("My App"),
-          backgroundColor: Colors.blue,
+          backgroundColor: const Color.fromARGB(255, 133, 21, 77),
           centerTitle: true,
         ), // AppBar
         body: Home(),
