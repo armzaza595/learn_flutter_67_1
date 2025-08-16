@@ -6,51 +6,16 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      //mainAxisAlignment: MainAxisAlignment.start,
-      //mainAxisAlignment: MainAxisAlignment.center,
-      //mainAxisAlignment: MainAxisAlignment.end,
-      //mainAxisAlignment: MainAxisAlignment.spaceAround,
-      //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Container(
-          color: Colors.redAccent,
-          padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-          child: Text(
-            "Hello",
-            style: TextStyle(
-              fontSize: 20,
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              letterSpacing: 3,
-            ),
-          ),
-        ),
-        Container(
-          color: Colors.redAccent,
-          padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-          child: Text(
-            "Hello",
-            style: TextStyle(
-              fontSize: 20,
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              letterSpacing: 3,
-            ),
-          ),
-        ),
-        Container(
-          color: Colors.redAccent,
-          padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-          child: Text(
-            "Hello",
-            style: TextStyle(
-              fontSize: 20,
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              letterSpacing: 3,
-            ),
-          ),
+        Image.asset("assets/images/wallpaper.jpg", width: 200, height: 200),
+        const SizedBox(height: 20),
+        Image.network(
+          "https://picsum.photos/200/300",
+          width: 200,
+          height: 200,
+          fit: BoxFit.cover,
         ),
       ],
     );
