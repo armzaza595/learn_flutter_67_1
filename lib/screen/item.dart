@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learn_flutter_67_1/model/person.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Item extends StatefulWidget {
   const Item({super.key});
@@ -35,7 +36,7 @@ class ItemState extends State<Item> {
               ),
               title: Text(
                 person.name,
-                style: const TextStyle(
+                style: GoogleFonts.kanit(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
@@ -43,7 +44,7 @@ class ItemState extends State<Item> {
               ),
               subtitle: Text(
                 "${person.age} ปี • ${person.jobTitle.title}",
-                style: const TextStyle(fontSize: 16, color: Colors.white70),
+                style: GoogleFonts.kanit(fontSize: 16, color: Colors.white70),
               ),
               onTap: () {
                 debugPrint("${person.name} ทำงานเป็น ${person.jobTitle.title}");
