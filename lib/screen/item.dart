@@ -14,42 +14,42 @@ class ItemState extends State<Item> {
     return ListView.builder(
       itemCount: personList.length,
       itemBuilder: (context, index) {
-        return Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30), // ✅ แก้แล้ว
-            color: Colors.pinkAccent,
+        final person = personList[index];
+
+        return Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
           ),
-          margin: const EdgeInsets.symmetric(vertical: 2, horizontal: 5),
-          padding: const EdgeInsets.all(20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  personList[index].name,
-                  style: const TextStyle(
-                    fontSize: 20,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
+          margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+          child: Container(
+            decoration: BoxDecoration(
+              color: person.jobTitle.color, // ใช้สีจาก enum
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: ListTile(
+              contentPadding: const EdgeInsets.all(15),
+              leading: CircleAvatar(
+                backgroundImage: AssetImage(person.jobTitle.image),
+                backgroundColor: Colors.white24, // กัน error ถ้ารูปไม่โหลด
+                radius: 25,
+              ),
+              title: Text(
+                person.name,
+                style: const TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
                 ),
-                Text(
-                  "${personList[index].age} ปี",
-                  style: const TextStyle(
-                    fontSize: 20,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Text(
-                  personList[index].job,
-                  style: const TextStyle(
-                    fontSize: 20,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
-            )
+              ),
+              subtitle: Text(
+                "${person.age} ปี • ${person.jobTitle.title}",
+                style: const TextStyle(fontSize: 16, color: Colors.white70),
+              ),
+              onTap: () {
+                debugPrint("${person.name} ทำงานเป็น ${person.jobTitle.title}");
+              },
+            ),
+          ),
         );
       },
     );
